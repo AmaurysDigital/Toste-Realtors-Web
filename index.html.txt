@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Realtors - Tu nuevo hogar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- HEADER -->
+  <header class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">Realtors Group</h1>
+      <nav class="space-x-4">
+        <a href="#inicio" class="hover:text-blue-500">Inicio</a>
+        <a href="#propiedades" class="hover:text-blue-500">Propiedades</a>
+        <a href="#nosotros" class="hover:text-blue-500">Nosotros</a>
+        <a href="#contacto" class="hover:text-blue-500">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="bg-blue-100 py-20 text-center">
+    <h2 class="text-4xl font-bold mb-4">Encuentra la casa de tus sueños</h2>
+    <p class="text-lg mb-6">Asesoramiento profesional, resultados reales</p>
+    <a href="#propiedades" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Ver propiedades</a>
+  </section>
+
+  <!-- PROPIEDADES -->
+  <section id="propiedades" class="py-16 max-w-7xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-8 text-center">Propiedades destacadas</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Tarjeta de propiedad -->
+      <div class="bg-white rounded shadow-md overflow-hidden">
+        <img src="https://via.placeholder.com/400x200" alt="Casa 1" class="w-full">
+        <div class="p-4">
+          <h4 class="text-xl font-semibold">Casa moderna en Santo Domingo</h4>
+          <p class="text-gray-600">3 habitaciones · 2 baños · 250 m²</p>
+          <p class="text-blue-600 font-bold mt-2">$180,000</p>
+          <a href="#contacto" class="text-sm text-blue-500 mt-4 inline-block">Contactar</a>
+        </div>
+      </div>
+
+      <!-- Copia esta tarjeta para más propiedades -->
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="bg-gray-200 py-16 text-center">
+    <h3 class="text-3xl font-bold mb-4">¿Quiénes somos?</h3>
+    <p class="max-w-xl mx-auto">Somos un equipo de agentes inmobiliarios con más de 10 años de experiencia ayudando a familias y emprendedores a encontrar la propiedad ideal.</p>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-16 max-w-3xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-8 text-center">Contáctanos</h3>
+    <form action="https://formspree.io/f/yourformcode" method="POST" class="bg-white shadow-md rounded p-6 space-y-4">
+      <input type="text" name="nombre" placeholder="Tu nombre" class="w-full border p-2 rounded" required />
+      <input type="email" name="email" placeholder="Tu correo" class="w-full border p-2 rounded" required />
+      <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje" class="w-full border p-2 rounded" required></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
+    </form>
+  </section>
+
+  <footer class="bg-white text-center py-6 border-t">
+    <p>&copy; 2025 Realtors Group. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
