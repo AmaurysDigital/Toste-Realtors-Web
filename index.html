@@ -1,196 +1,55 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toste-Realtors</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f4f4;
-      color: #333;
-    }
-
-    header {
-      background-color: #004aad;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 1rem;
-      text-decoration: none;
-    }
-
-    .lang-switcher {
-      background: white;
-      color: #004aad;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      color: #004aad;
-    }
-
-    .property {
-      background: white;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #004aad;
-      color: white;
-      margin-top: 2rem;
-    }
-
-    form input, form textarea {
-      display: block;
-      width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    form button {
-      background: #004aad;
-      color: white;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+  <title>Toste Realtors</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div><h1>Toste-Realtors</h1></div>
-    <nav>
-      <a href="#home" data-key="nav_home">Inicio</a>
-      <a href="#about" data-key="nav_about">Nosotros</a>
-      <a href="#properties" data-key="nav_properties">Propiedades</a>
-      <a href="#contact" data-key="nav_contact">Contacto</a>
+  <header class="top-menu">
+    <h1 class="logo">Toste Realtors</h1>
+    <nav class="top-nav">
+      <a href="#" data-section="home">Home</a>
+      <a href="#" data-section="contact">Contact</a>
+      <a href="#" data-section="services">Services</a>
+      <a href="#" data-section="about">About</a>
     </nav>
-    <select class="lang-switcher" onchange="switchLanguage(this.value)">
-      <option value="es">ES</option>
-      <option value="en">EN</option>
-    </select>
   </header>
 
-  <section id="home">
-    <h2 data-key="home_title">Bienvenidos a Toste-Realtors</h2>
-    <p data-key="home_desc">Expertos en bienes raíces. Encuentra tu propiedad ideal con nosotros.</p>
-  </section>
+  <aside class="side-menu">
+    <img src="public/images/ZullyJoel.jpg" alt="Equipo Toste" class="team-photo" />
+    <nav class="side-nav">
+      <a href="#" data-section="home">🏠 Home</a>
+      <a href="#" data-section="contact">📞 Contact</a>
+      <a href="#" data-section="services">💼 Services</a>
+      <a href="#" data-section="about">ℹ️ About</a>
+    </nav>
+  </aside>
 
-  <section id="about">
-    <h2 data-key="about_title">Sobre Nosotros</h2>
-    <p data-key="about_desc">Somos un equipo de agentes inmobiliarios comprometidos con ayudarte a encontrar el hogar de tus sueños.</p>
-  </section>
+  <main id="content">
+    <section id="home" class="section active">
+      <h2>Bienvenidos a Toste Realtors</h2>
+      <p>Tu aliado confiable en bienes raíces.</p>
+    </section>
+    <section id="contact" class="section">
+      <h2>Contáctanos</h2>
+      <p>info@toste-realtors.com</p>
+    </section>
+    <section id="services" class="section">
+      <h2>Nuestros Servicios</h2>
+      <ul>
+        <li>Compra y venta de propiedades</li>
+        <li>Alquileres residenciales y comerciales</li>
+        <li>Asesoría legal y financiera</li>
+      </ul>
+    </section>
+    <section id="about" class="section">
+      <h2>Sobre Nosotros</h2>
+      <p>Somos un equipo apasionado por conectar personas con hogares ideales.</p>
+    </section>
+  </main>
 
-  <section id="properties">
-    <h2 data-key="properties_title">Propiedades Destacadas</h2>
-
-    <div class="property">
-      <h3 data-key="prop1_title">Apartamento moderno en San Juan</h3>
-      <p data-key="prop1_desc">2 habitaciones, 2 baños, vista al mar. Precio: $250,000</p>
-    </div>
-
-    <div class="property">
-      <h3 data-key="prop2_title">Casa familiar en Bayamón</h3>
-      <p data-key="prop2_desc">3 habitaciones, patio grande. Precio: $320,000</p>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 data-key="contact_title">Contáctanos</h2>
-    <form>
-      <input type="text" placeholder="Nombre" data-key="placeholder_name"/>
-      <input type="email" placeholder="Correo electrónico" data-key="placeholder_email"/>
-      <textarea placeholder="Escribe tu mensaje aquí..." data-key="placeholder_message"></textarea>
-      <button type="submit" data-key="send_button">Enviar</button>
-    </form>
-  </section>
-
-  <footer>
-    <p data-key="footer">&copy; 2025 Toste-Realtors. Todos los derechos reservados.</p>
-  </footer>
-
-  <script>
-    const translations = {
-      en: {
-        nav_home: "Home",
-        nav_about: "About",
-        nav_properties: "Properties",
-        nav_contact: "Contact",
-        home_title: "Welcome to Toste-Realtors",
-        home_desc: "Real estate experts. Find your ideal property with us.",
-        about_title: "About Us",
-        about_desc: "We are a team of real estate agents committed to helping you find your dream home.",
-        properties_title: "Featured Properties",
-        prop1_title: "Modern apartment in San Juan",
-        prop1_desc: "2 bedrooms, 2 bathrooms, sea view. Price: $250,000",
-        prop2_title: "Family house in Bayamón",
-        prop2_desc: "3 bedrooms, large backyard. Price: $320,000",
-        contact_title: "Contact Us",
-        placeholder_name: "Name",
-        placeholder_email: "Email",
-        placeholder_message: "Write your message here...",
-        send_button: "Send",
-        footer: "© 2025 Toste-Realtors. All rights reserved."
-      },
-      es: {
-        nav_home: "Inicio",
-        nav_about: "Nosotros",
-        nav_properties: "Propiedades",
-        nav_contact: "Contacto",
-        home_title: "Bienvenidos a Toste-Realtors",
-        home_desc: "Expertos en bienes raíces. Encuentra tu propiedad ideal con nosotros.",
-        about_title: "Sobre Nosotros",
-        about_desc: "Somos un equipo de agentes inmobiliarios comprometidos con ayudarte a encontrar el hogar de tus sueños.",
-        properties_title: "Propiedades Destacadas",
-        prop1_title: "Apartamento moderno en San Juan",
-        prop1_desc: "2 habitaciones, 2 baños, vista al mar. Precio: $250,000",
-        prop2_title: "Casa familiar en Bayamón",
-        prop2_desc: "3 habitaciones, patio grande. Precio: $320,000",
-        contact_title: "Contáctanos",
-        placeholder_name: "Nombre",
-        placeholder_email: "Correo electrónico",
-        placeholder_message: "Escribe tu mensaje aquí...",
-        send_button: "Enviar",
-        footer: "© 2025 Toste-Realtors. Todos los derechos reservados."
-      }
-    };
-
-    function switchLanguage(lang) {
-      document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (el.placeholder !== undefined && el.placeholder !== '') {
-          el.placeholder = translations[lang][key];
-        } else {
-          el.textContent = translations[lang][key];
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
