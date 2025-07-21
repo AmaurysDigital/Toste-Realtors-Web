@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Toste Realtors</title>
 
-  <!-- Bootstrap CSS: para estilos y diseño responsivo -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!-- Tu archivo CSS personalizado (si luego quieres agregar estilos propios) -->
-  <!-- <link rel="stylesheet" href="style.css" /> -->
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Opcional: cursor pointer en links de menú */
+    nav a.nav-link {
+      cursor: pointer;
+    }
+    /* Altura mínima para main */
+    main {
+      min-height: 80vh;
+    }
+  </style>
 </head>
 <body>
-  <!-- Menú superior fijo con fondo azul oscuro -->
+  <!-- Menú superior fijo con fondo azul -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <div class="container-fluid">
-      <!-- Logo o título -->
       <a class="navbar-brand" href="#">Toste Realtors</a>
 
-      <!-- Botón para menú colapsable en móvil -->
+      <!-- Botón hamburguesa para móvil -->
       <button
         class="navbar-toggler"
         type="button"
@@ -31,47 +40,90 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Menú superior desplegable -->
       <div class="collapse navbar-collapse" id="topNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#" data-section="home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-section="contact">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-section="services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-section="about">About</a></li>
+        <!-- FOTO EQUIPO visible solo en móvil (oculta md+) -->
+        <div class="d-md-none text-center my-3">
+          <img
+            src="images/ZullyJoel.png"
+            alt="Equipo Toste"
+            class="img-fluid rounded-circle"
+            style="max-width: 120px;"
+          />
+        </div>
+
+        <!-- Menú principal -->
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-section="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="about">About</a>
+          </li>
+
+          <!-- Selector de idioma -->
+          <li class="nav-item ms-3 d-flex">
+            <button id="btn-es" class="btn btn-sm btn-light me-1" title="Español">ES</button>
+            <button id="btn-en" class="btn btn-sm btn-light" title="English">EN</button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Contenedor general con margen superior para no tapar contenido por el menú fijo -->
   <div class="container-fluid" style="padding-top: 70px;">
     <div class="row">
-      <!-- Menú lateral fijo, visible en md (tablet) y superior -->
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar position-fixed vh-100">
-        <div class="text-center my-3">
-          <!-- Imagen del equipo: debe estar en carpeta images/ en la raíz -->
-          <img src="images/ZullyJoel.png" alt="Equipo Toste" class="img-fluid rounded-circle" />
+      <!-- Menú lateral fijo para md+ -->
+      <nav
+        class="col-md-2 d-none d-md-block bg-light sidebar position-fixed vh-100"
+        style="padding-top: 20px;"
+      >
+        <div class="text-center mb-4">
+          <img
+            src="images/ZullyJoel.png"
+            alt="Equipo Toste"
+            class="img-fluid rounded-circle"
+            style="max-width: 150px;"
+          />
         </div>
-        <!-- Navegación lateral -->
         <ul class="nav flex-column">
-          <li class="nav-item"><a class="nav-link active" href="#" data-section="home">🏠 Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-section="contact">📞 Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-section="services">💼 Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#" data-section="about">ℹ️ About</a></li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-section="home">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="contact">📞 Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="services">💼 Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-section="about">ℹ️ About</a>
+          </li>
         </ul>
       </nav>
 
-      <!-- Contenido principal: debe tener margen para no tapar el menú lateral -->
+      <!-- Contenido principal con offset para no tapar menú lateral -->
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 offset-md-2">
-        <!-- Secciones, solo la de home está visible inicialmente -->
+        <!-- Sección HOME -->
         <section id="home" class="section">
           <h2>Bienvenidos a Toste Realtors</h2>
-          <p>Tu aliado confiable en bienes raíces.</p>
+          <p class="lead">
+            Tu aliado confiable en bienes raíces. Encuentra la casa de tus sueños con nosotros.
+          </p>
         </section>
+
+        <!-- Sección CONTACT -->
         <section id="contact" class="section d-none">
           <h2>Contáctanos</h2>
-          <p>info@toste-realtors.com</p>
+          <p class="lead">info@toste-realtors.com</p>
         </section>
+
+        <!-- Sección SERVICES -->
         <section id="services" class="section d-none">
           <h2>Nuestros Servicios</h2>
           <ul>
@@ -80,39 +132,152 @@
             <li>Asesoría legal y financiera</li>
           </ul>
         </section>
+
+        <!-- Sección ABOUT -->
         <section id="about" class="section d-none">
           <h2>Sobre Nosotros</h2>
-          <p>Somos un equipo apasionado por conectar personas con hogares ideales.</p>
+          <p>
+            Somos un equipo apasionado por conectar personas con hogares ideales. Tu confianza es nuestro compromiso.
+          </p>
         </section>
       </main>
     </div>
   </div>
 
-  <!-- Bootstrap JS Bundle: incluye Popper para funcionalidad como menús desplegables -->
+  <!-- Bootstrap JS Bundle para funcionalidad de menús -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script personalizado para manejo de navegación entre secciones -->
+  <!-- Script para manejar cambio de secciones y cambio de idioma -->
   <script>
-    // Seleccionamos todos los links de navegación (tanto lateral como superior)
+    // Cambio de sección al hacer clic en links
+    function cambiarSeccion(sectionId) {
+      // Quitar clase active de todos los links
+      document.querySelectorAll('nav a.nav-link').forEach(a => a.classList.remove('active'));
+
+      // Agregar clase active al link clickeado
+      document.querySelectorAll('nav a.nav-link').forEach(a => {
+        if (a.getAttribute('data-section') === sectionId) a.classList.add('active');
+      });
+
+      // Ocultar todas las secciones
+      document.querySelectorAll('main section').forEach(section => section.classList.add('d-none'));
+
+      // Mostrar la sección correspondiente
+      const sec = document.getElementById(sectionId);
+      if (sec) sec.classList.remove('d-none');
+    }
+
+    // Agregar evento click a todos los links de navegación
     document.querySelectorAll('nav a.nav-link').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-
-        // Quitamos la clase active de todos los links
-        document.querySelectorAll('nav a.nav-link').forEach(a => a.classList.remove('active'));
-
-        // Añadimos active al link clickeado
-        link.classList.add('active');
-
-        // Ocultamos todas las secciones
-        document.querySelectorAll('main section').forEach(section => section.classList.add('d-none'));
-
-        // Mostramos la sección relacionada con el link clickeado
-        const sectionId = link.getAttribute('data-section');
-        const section = document.getElementById(sectionId);
-        if (section) section.classList.remove('d-none');
+        cambiarSeccion(link.getAttribute('data-section'));
       });
     });
+
+    // Textos en español e inglés
+    const textos = {
+      es: {
+        home: "Home",
+        contact: "Contact",
+        services: "Services",
+        about: "About",
+        sections: {
+          home: {
+            title: "Bienvenidos a Toste Realtors",
+            content:
+              "Tu aliado confiable en bienes raíces. Encuentra la casa de tus sueños con nosotros."
+          },
+          contact: {
+            title: "Contáctanos",
+            content: "info@toste-realtors.com"
+          },
+          services: {
+            title: "Nuestros Servicios",
+            content: `
+            <ul>
+              <li>Compra y venta de propiedades</li>
+              <li>Alquileres residenciales y comerciales</li>
+              <li>Asesoría legal y financiera</li>
+            </ul>`
+          },
+          about: {
+            title: "Sobre Nosotros",
+            content:
+              "Somos un equipo apasionado por conectar personas con hogares ideales. Tu confianza es nuestro compromiso."
+          }
+        }
+      },
+      en: {
+        home: "Inicio",
+        contact: "Contacto",
+        services: "Servicios",
+        about: "Sobre Nosotros",
+        sections: {
+          home: {
+            title: "Welcome to Toste Realtors",
+            content: "Your trusted partner in real estate. Find your dream home with us."
+          },
+          contact: {
+            title: "Contact Us",
+            content: "info@toste-realtors.com"
+          },
+          services: {
+            title: "Our Services",
+            content: `
+            <ul>
+              <li>Buying and selling properties</li>
+              <li>Residential and commercial rentals</li>
+              <li>Legal and financial advice</li>
+            </ul>`
+          },
+          about: {
+            title: "About Us",
+            content:
+              "We are a passionate team dedicated to connecting people with ideal homes. Your trust is our commitment."
+          }
+        }
+      }
+    };
+
+    // Función para cambiar idioma
+    function cambiarIdioma(lang) {
+      // Cambiar textos de menú
+      document.querySelectorAll("nav a.nav-link").forEach(link => {
+        const seccion = link.getAttribute("data-section");
+        if (textos[lang][seccion]) link.textContent = textos[lang][seccion];
+      });
+
+      // Cambiar contenido de las secciones
+      Object.keys(textos[lang].sections).forEach(seccion => {
+        const secElem = document.getElementById(seccion);
+        if (secElem) {
+          secElem.querySelector("h2").innerHTML = textos[lang].sections[seccion].title;
+
+          // Eliminar párrafos o listas previas
+          Array.from(secElem.querySelectorAll("p, ul")).forEach(el => el.remove());
+
+          // Insertar nuevo contenido
+          const contenido = textos[lang].sections[seccion].content.trim();
+          if (contenido.startsWith("<ul")) {
+            secElem.insertAdjacentHTML("beforeend", contenido);
+          } else {
+            const p = document.createElement("p");
+            p.classList.add("lead");
+            p.textContent = contenido;
+            secElem.appendChild(p);
+          }
+        }
+      });
+    }
+
+    // Eventos botones idioma
+    document.getElementById("btn-es").addEventListener("click", () => cambiarIdioma("es"));
+    document.getElementById("btn-en").addEventListener("click", () => cambiarIdioma("en"));
+
+    // Inicializamos idioma español y sección home visible
+    cambiarIdioma("es");
+    cambiarSeccion("home");
   </script>
 </body>
 </html>
